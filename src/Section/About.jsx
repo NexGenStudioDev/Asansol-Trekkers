@@ -33,12 +33,14 @@ const About = () => {
   }, []);
 
   return (
-    <section className="relative w-full bg-white py-16 sm:py-20 md:py-24 lg:py-28 overflow-hidden">
+    <section
+      id="About"
+      className="relative w-full bg-white py-16 sm:py-20 md:py-24 lg:py-28 overflow-hidden"
+    >
       {/* Soft glowing background blob */}
       <div className="absolute -z-10 w-[18rem] h-[18rem] md:w-[24rem] md:h-[24rem] bg-[#E7DCC3]/50 blur-3xl rounded-full top-10 left-10 animate-pulse" />
 
       <div className="max-w-7xl mx-auto flex flex-col-reverse md:flex-row items-center justify-between gap-12 lg:gap-20 px-6 sm:px-8 md:px-12 lg:px-20">
-        
         {/* ---------- Image Section ---------- */}
         <div
           ref={imageRef}
@@ -59,10 +61,7 @@ const About = () => {
           className="w-full md:w-1/2 text-center md:text-left space-y-5 sm:space-y-6 md:space-y-8"
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-800 leading-tight tracking-tight">
-            About{" "}
-            <span className="text-[#937A4B]">
-              Asansol Trekkers
-            </span>
+            About <span className="text-[#937A4B]">Asansol Trekkers</span>
           </h2>
 
           <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto md:mx-0">

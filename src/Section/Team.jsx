@@ -42,16 +42,14 @@ const Team = () => {
   useEffect(() => {
     const track = trackRef.current;
 
- 
     const clones = track.innerHTML;
     track.innerHTML += clones;
 
     const totalWidth = track.scrollWidth / 2;
 
-   
     const animation = gsap.to(track, {
-      x: `-=${totalWidth}`, 
-      duration: 20,     
+      x: `-=${totalWidth}`,
+      duration: 20,
       ease: "none",
       repeat: -1,
       modifiers: {
@@ -61,7 +59,6 @@ const Team = () => {
 
     animationRef.current = animation;
 
-   
     const handleMouseEnter = () => animation.pause();
     const handleMouseLeave = () => animation.resume();
 
@@ -76,18 +73,20 @@ const Team = () => {
   }, []);
 
   return (
-    <section className="py-16 sm:py-20 md:py-24 bg-gradient-to-b from-[#f9f7f4] to-[#f3efe9] overflow-hidden" id="team">
+    <section
+      className="py-16 sm:py-20 md:py-24 bg-gradient-to-b from-[#f9f7f4] to-[#f3efe9] overflow-hidden"
+      id="Team"
+    >
       <div className="max-w-7xl mx-auto px-6 text-center">
- 
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4">
           <span className="text-gray-800">Meet Our </span>
           <span className="text-[#A2844E]">Team</span>
         </h2>
 
         <p className="text-gray-600 mb-12 text-base sm:text-lg max-w-2xl mx-auto">
-          Passionate travel experts dedicated to making your adventures unforgettable.
+          Passionate travel experts dedicated to making your adventures
+          unforgettable.
         </p>
-
 
         <div className="relative w-[90%] sm:w-[85%] mx-auto">
           <div
@@ -112,7 +111,6 @@ const Team = () => {
           </div>
         </div>
       </div>
-
 
       <div className="absolute top-0 left-0 w-[14rem] sm:w-[18rem] md:w-[22rem] h-[14rem] sm:h-[18rem] md:h-[22rem] bg-[#E7DCC3]/50 blur-3xl rounded-full -z-10 animate-pulse" />
       <div className="absolute bottom-0 right-0 w-[14rem] sm:w-[18rem] md:w-[22rem] h-[14rem] sm:h-[18rem] md:h-[22rem] bg-[#b89e6b]/30 blur-3xl rounded-full -z-10 animate-pulse delay-200" />

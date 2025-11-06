@@ -9,12 +9,11 @@ import TopDestinations from "./Section/TopDestinations";
 import UpcomingEvent from "./Section/UpcomingEvent";
 import Footer from "./Components/Footer";
 import Team from "./Section/Team";
-import Testimonials from "./Section/Testimonials";
 import Contact from "./Section/Contact";
+import Testimonials from "./Section/Testimonials.jsx";
 
 const App = () => {
   return (
-
     <>
       <Nav />
       <Hero />
@@ -31,7 +30,6 @@ const App = () => {
 
       {/* <div className="h-screen w-screen bg-red-400"></div> */}
     </>
-
   );
 };
 

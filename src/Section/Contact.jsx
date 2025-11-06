@@ -3,7 +3,7 @@ import ContactGallery from "../Components/ContactGallery";
 
 const Contact = () => {
   return (
-    <section className="bg-gray-50 py-20 px-6 md:px-12 lg:px-20" id="contact">
+    <section className="bg-gray-50 py-20 px-6 md:px-12 lg:px-20" id="Contact">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[1.2fr_1.8fr] gap-24 items-start">
         {/* === Left: Trekking Gallery === */}
         <div className="order-1 lg:order-1">
