@@ -1,5 +1,12 @@
 import React from "react";
 import TourCard from "../Components/TourCard";
+import { useEffect } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useRef } from "react";
+
+gsap.registerPlugin(ScrollTrigger);
+
 
 const destinations = [
   {
@@ -35,8 +42,27 @@ const destinations = [
 ];
 
 const PopularDestinations = () => {
+
+  let DestinationRef = useRef(null);
+
+  useEffect(() => {
+   
+    gsap.to(DestinationRef.current, {
+      scrollTrigger: {
+        trigger: DestinationRef.current,
+        start: "top 80%",
+        end: "bottom 60%",
+        toggleActions: "play none none reverse",
+      },
+      opacity: 1,
+      y: 0,
+      duration: 1,
+      ease: "power3.out",
+    });
+  }, []);
+
   return (
-    <section className="relative w-full min-h-screen bg-linear-to-b from-[#f5f2ec] to-[#f9f7f4] py-20 px-6 md:px-12 lg:px-20 flex flex-col items-center overflow-hidden">
+    <section ref={DestinationRef} className="relative w-full min-h-screen bg-linear-to-b from-[#f5f2ec] to-[#f9f7f4] py-20 px-6 md:px-12 lg:px-20 flex flex-col items-center overflow-hidden">
       {/* Decorative Background Glow */}
       <div className="absolute top-0 left-0 w-[350px] h-[350px] bg-[#E7DCC3]/50 blur-3xl rounded-full -z-10 animate-pulse" />
       <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-[#b89e6b]/30 blur-3xl rounded-full -z-10 animate-pulse delay-200" />

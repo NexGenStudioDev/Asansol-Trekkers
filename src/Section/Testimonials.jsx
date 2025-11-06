@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import TestimonialCard from "../Components/TestimonialCard";
+import { FaQuoteLeft } from "react-icons/fa";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -11,7 +11,7 @@ const Testimonials = () => {
       name: "Aarav Sharma",
       role: "Student",
       message:
-        "The courses offered were well structured and easy to follow. I’ve learned so much in just a few weeks!",
+        "The courses offered were incredibly well-structured and easy to follow. I've gained confidence and new skills that helped me land my dream internship!",
       image:
         "https://www.india.com/wp-content/uploads/2017/10/Bigg-Boss-Tamil-Winner-Arav-Aarav.jpg",
     },
@@ -19,14 +19,14 @@ const Testimonials = () => {
       name: "Priya Mehta",
       role: "Teacher",
       message:
-        "The platform is super intuitive, and my students absolutely love the interactive lessons!",
+        "An absolutely intuitive platform! My students love the interactive learning, and I love how easy it is to manage lessons. It’s truly next-gen education!",
       image: "https://static.toiimg.com/photo/79283856.cms",
     },
     {
       name: "Rohan Gupta",
       role: "Parent",
       message:
-        "I can easily track my child’s progress. The app makes learning fun and effective.",
+        "Tracking my child’s progress has never been this easy. I can actually see learning become fun and engaging — that’s priceless!",
       image:
         "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=800&q=80",
     },
@@ -36,105 +36,120 @@ const Testimonials = () => {
   const testimonialRef = useRef(null);
   const sectionRef = useRef(null);
 
-  // Animate section when it scrolls into view
+  // Scroll animation
   useEffect(() => {
-    const section = sectionRef.current;
-    if (!section) return;
-
-    const ctx = gsap.context(() => {
-      gsap.from(section, {
-        opacity: 0,
-        y: 60,
-        duration: 1,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: section,
-          start: "top 80%", // start when 80% of section enters viewport
-          toggleActions: "play none none reverse",
-        },
-      });
-    }, section);
-
-    return () => ctx.revert();
+    gsap.from(sectionRef.current, {
+      opacity: 0,
+      y: 80,
+      duration: 1.2,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        start: "top 85%",
+      },
+    });
   }, []);
 
-  // Animate testimonial card change
+  // Animate on slide change
   useEffect(() => {
     if (!testimonialRef.current) return;
 
     gsap.fromTo(
       testimonialRef.current,
-      { opacity: 0, y: 30 },
+      { opacity: 0, y: 40 },
       { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" }
     );
   }, [currentPage]);
 
-  const handleNext = () => {
-    setCurrentPage((prev) => (prev + 1) % testimonials.length);
-  };
-
-  const handlePrev = () => {
-    setCurrentPage(
-      (prev) => (prev - 1 + testimonials.length) % testimonials.length
-    );
-  };
+  const handleNext = () => setCurrentPage((p) => (p + 1) % testimonials.length);
+  const handlePrev = () =>
+    setCurrentPage((p) => (p - 1 + testimonials.length) % testimonials.length);
 
   const current = testimonials[currentPage];
 
   return (
     <section
       ref={sectionRef}
-      className="py-20 bg-linear-to-b from-[#f5f2ec] to-[#f9f7f4]"
       id="testimonials"
+      className="relative bg-white py-16 sm:py-20 md:py-28 overflow-hidden"
     >
-      <div className="max-w-6xl mx-auto px-6 text-center">
-        {/* === Heading === */}
-        <h2 className="text-4xl sm:text-5xl font-extrabold mb-4">
-          <span className="text-[#1E293B]">Customer&nbsp;</span>
-          <span className="text-[#A2844E]">Testimonials</span>
+      {/* 🌤️ Background Glow */}
+      <div className="absolute -top-10 -left-10 w-[14rem] h-[14rem] sm:w-[20rem] sm:h-[20rem] bg-[#E7DCC3]/40 blur-3xl rounded-full -z-10" />
+      <div className="absolute bottom-0 right-0 w-[14rem] h-[14rem] sm:w-[20rem] sm:h-[20rem] bg-[#b89e6b]/20 blur-3xl rounded-full -z-10" />
+
+      {/* 🧭 Section Heading */}
+      <div className="text-center mb-12 sm:mb-16 px-6">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4 text-[#1E293B] leading-snug">
+          What Our <span className="text-[#A2844E]">Adventurers Say</span>
         </h2>
+        <p className="text-gray-600 text-base sm:text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
 
-        <p className="text-gray-500 mb-12 text-base sm:text-lg">
-          See what our happy learners have to say about their experience.
+        Real stories from trekkers who turned their adventures with Asansol Trekkers 
+         {" "}
+          <span className="text-[#A2844E] font-semibold">Asansol Trekkers</span> into lifelong memories.
         </p>
+      </div>
 
-        {/* === Testimonial Card === */}
-        <div ref={testimonialRef}>
-          <TestimonialCard
-            image={current.image}
-            message={current.message}
-            name={current.name}
-            role={current.role}
-          />
+     
+      <div
+        ref={testimonialRef}
+        className="relative w-[85%] max-w-5xl mx-auto bg-white border border-gray-200 rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.08)] 
+        p-6 sm:p-8 md:p-10 flex flex-col md:flex-row items-center md:items-stretch gap-10 md:gap-14 transition-transform duration-700 hover:scale-[1.02]"
+      >
+     
+        <div className="md:w-2/3 text-center md:text-left flex flex-col justify-center">
+          <FaQuoteLeft className="text-[#A2844E]/60 text-3xl mb-3 md:mb-4 mx-auto md:mx-0" />
+          <p className="text-gray-700 text-lg sm:text-xl italic mb-5 leading-relaxed">
+            “{current.message}”
+          </p>
+          <h3 className="text-xl sm:text-2xl font-semibold text-[#1E293B]">
+            {current.name}
+          </h3>
+          <p className="text-[#A2844E] text-sm sm:text-base font-medium mt-1">
+            {current.role}
+          </p>
         </div>
 
-        {/* === Pagination Controls === */}
-        <div className="flex justify-center items-center gap-4 mt-8">
-          <button
-            onClick={handlePrev}
-            className="bg-[#1E293B] text-white px-4 py-2 rounded-full hover:bg-[#A2844E] transition-all"
-          >
-            Prev
-          </button>
-
-          <div className="flex gap-2">
-            {testimonials.map((_, i) => (
-              <span
-                key={i}
-                className={`w-3 h-3 rounded-full ${
-                  i === currentPage ? "bg-[#A2844E]" : "bg-gray-300"
-                }`}
-              ></span>
-            ))}
+      
+        <div className="md:w-1/3 flex justify-center md:justify-end">
+          <div className="w-[220px] sm:w-[260px] md:w-[300px] aspect-square bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden">
+            <img
+              src={current.image}
+              alt={current.name}
+              className="w-full h-full object-cover object-center"
+            />
           </div>
-
-          <button
-            onClick={handleNext}
-            className="bg-[#1E293B] text-white px-4 py-2 rounded-full hover:bg-[#A2844E] transition-all"
-          >
-            Next
-          </button>
         </div>
+      </div>
+
+     
+      <div className="flex flex-col sm:flex-row justify-center items-center gap-5 mt-12 sm:mt-14 px-4">
+        <button
+          onClick={handlePrev}
+          className="bg-[#1E293B] text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-full hover:bg-[#A2844E] transition-all text-sm sm:text-base font-semibold shadow-md hover:shadow-lg"
+        >
+          ← Prev
+        </button>
+
+        <div className="flex gap-2 sm:gap-3">
+          {testimonials.map((_, i) => (
+            <span
+              key={i}
+              className={`w-3 h-3 sm:w-4 sm:h-4 rounded-full transition-all duration-300 ${
+                i === currentPage
+                  ? "bg-[#A2844E] scale-125 shadow-md"
+                  : "bg-gray-300 hover:bg-gray-400"
+              }`}
+            ></span>
+          ))}
+        </div>
+
+        <button
+          onClick={handleNext}
+          className="bg-[#1E293B] text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-full hover:bg-[#A2844E] transition-all text-sm sm:text-base font-semibold shadow-md hover:shadow-lg"
+        >
+          Next →
+        </button>
       </div>
     </section>
   );

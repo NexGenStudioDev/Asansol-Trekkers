@@ -1,72 +1,77 @@
-import React, { useRef, useEffect, useState } from 'react'
-import { gsap } from 'gsap'
-
+import React, { useRef, useEffect, useState } from 'react';
+import { gsap } from 'gsap';
 
 const Hero = () => {
-  const videoRef = useRef(null)
-  const contentRef = useRef(null)
-  const [isPlaying, setIsPlaying] = useState(true)
+  const videoRef = useRef(null);
+  const contentRef = useRef(null);
+  const [isPlaying, setIsPlaying] = useState(true);
 
   useEffect(() => {
-    // GSAP animation for content
     gsap.fromTo(
       contentRef.current,
-      { opacity: 0, y: 50 },
-      { opacity: 1, y: 0, duration: 1, ease: 'power3.out' }
-    )
-  }, [])
+      { opacity: 0.2, scale: 0.8, y: 50 },
+      { opacity: 1, scale: 1, y: 0, duration: 1.4, ease: 'power3.out' }
+    );
+  }, []);
 
   const toggleVideoPlayback = () => {
     if (isPlaying) {
-      videoRef.current.pause()
+      videoRef.current.pause();
     } else {
-      videoRef.current.play()
+      videoRef.current.play();
     }
-    setIsPlaying(!isPlaying)
-  }
+    setIsPlaying(!isPlaying);
+  };
 
   return (
-    <div
-      className='h-screen w-screen relative overflow-hidden'
-
+    <section
+      className="relative h-screen w-full overflow-hidden flex items-center justify-center"
     >
- 
-   
-
+      {/* Background Image / Video */}
       <img
-      src='https://static2.tripoto.com/media/filter/tst/img/765686/TripDocument/1564738457_1564738455215.jpg'
-      className="absolute top-0 left-0 w-full h-full object-cover"
-      alt='Hero Background'
+        src="https://static2.tripoto.com/media/filter/tst/img/765686/TripDocument/1564738457_1564738455215.jpg"
+        alt="Hero Background"
+        className="absolute top-0 left-0 w-full h-full object-cover"
       />
 
-
+      {/* Overlay */}
       <div className="absolute top-0 left-0 w-full h-full bg-black/50"></div>
 
-
+      {/* Content */}
       <div
         ref={contentRef}
-        className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4"
+        className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4 sm:px-6 md:px-10 lg:px-16"
       >
-        <h1 className='text-6xl font-bold text-white mb-4'>
-          25+ Years of Excellence <br />
-          <span className='text-[#937A4B]'>in Tracking</span>
+        {/* Title */}
+        <h1
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-4 leading-tight drop-shadow-lg"
+        >
+          25+ Years of Excellence <br className="hidden sm:block" />
+          <span className="text-[#D0B77A]">in Trekking</span>
         </h1>
-        <p className='text-white max-w-2xl'>
-          Discover breathtaking destinations with Asansol Trekkers. Join us for unforgettable adventures!
+
+        {/* Subtitle */}
+        <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white max-w-sm sm:max-w-md md:max-w-2xl lg:max-w-3xl mx-auto leading-relaxed drop-shadow">
+          Discover breathtaking destinations with <span className="font-semibold">Asansol Trekkers</span>. 
+          Join us for unforgettable adventures — from lush valleys to snow-capped peaks.
         </p>
-        <div className="flex mt-6 space-x-4">
-          <button className='bg-[#937A4B] text-white px-6 py-3 rounded-md transition duration-300 shadow-lg'>
+
+        {/* Buttons */}
+        <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 mt-8">
+          <button
+            className="bg-[#937A4B] hover:bg-[#a08552] text-white px-8 py-3 rounded-md text-sm sm:text-base md:text-lg font-medium transition duration-300 shadow-lg"
+          >
             Explore Now
           </button>
-          <button className='bg-white text-[#937A4B] px-6 py-3 rounded-md hover:bg-gray-200 transition duration-300 shadow-lg'>
+          <button
+            className="bg-white text-[#937A4B] hover:bg-gray-100 px-8 py-3 rounded-md text-sm sm:text-base md:text-lg font-medium transition duration-300 shadow-lg"
+          >
             Contact Us
           </button>
         </div>
       </div>
+    </section>
+  );
+};
 
-   
-    </div>
-  )
-}
-
-export default Hero
+export default Hero;

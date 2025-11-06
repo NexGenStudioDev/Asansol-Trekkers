@@ -3,7 +3,7 @@ import { gsap } from "gsap";
 import TourCard from "../Components/TourCard";
 
 const Team = () => {
-  const carouselRef = useRef(null);
+  const trackRef = useRef(null);
   const animationRef = useRef(null);
 
   const teamMembers = [
@@ -37,81 +37,67 @@ const Team = () => {
       title: "Olivia Brown",
       label: "Operations",
     },
-    {
-      image:
-        "https://images.unsplash.com/photo-1614289299404-65f83a3c1193?auto=format&fit=crop&w=800&q=80",
-      title: "Olivia Brown",
-      label: "Operations",
-    },
-    {
-      image:
-        "https://images.unsplash.com/photo-1614289299404-65f83a3c1193?auto=format&fit=crop&w=800&q=80",
-      title: "Olivia Brown",
-      label: "Operations",
-    },
-    {
-      image:
-        "https://images.unsplash.com/photo-1614289299404-65f83a3c1193?auto=format&fit=crop&w=800&q=80",
-      title: "Olivia Brown",
-      label: "Operations",
-    },
   ];
 
   useEffect(() => {
-    const carousel = carouselRef.current;
-    const cards = carousel.querySelectorAll(".carousel-card");
-    const totalWidth = carousel.scrollWidth / 2;
+    const track = trackRef.current;
 
-    // GSAP infinite scrolling animation
-    const animation = gsap.to(cards, {
-      x: `-=${totalWidth}`,
-      duration: 25,
+ 
+    const clones = track.innerHTML;
+    track.innerHTML += clones;
+
+    const totalWidth = track.scrollWidth / 2;
+
+   
+    const animation = gsap.to(track, {
+      x: `-=${totalWidth}`, 
+      duration: 20,     
       ease: "none",
       repeat: -1,
       modifiers: {
-        x: gsap.utils.unitize((x) => parseFloat(x) % totalWidth),
+        x: gsap.utils.unitize((x) => parseFloat(x) % totalWidth), // seamless wrap
       },
     });
 
     animationRef.current = animation;
 
-    // Pause on hover
+   
     const handleMouseEnter = () => animation.pause();
     const handleMouseLeave = () => animation.resume();
 
-    carousel.addEventListener("mouseenter", handleMouseEnter);
-    carousel.addEventListener("mouseleave", handleMouseLeave);
+    track.addEventListener("mouseenter", handleMouseEnter);
+    track.addEventListener("mouseleave", handleMouseLeave);
 
     return () => {
-      carousel.removeEventListener("mouseenter", handleMouseEnter);
-      carousel.removeEventListener("mouseleave", handleMouseLeave);
+      track.removeEventListener("mouseenter", handleMouseEnter);
+      track.removeEventListener("mouseleave", handleMouseLeave);
       animation.kill();
     };
   }, []);
 
   return (
-    <section className="py-16 bg-gray-50 overflow-hidden" id="team">
+    <section className="py-16 sm:py-20 md:py-24 bg-gradient-to-b from-[#f9f7f4] to-[#f3efe9] overflow-hidden" id="team">
       <div className="max-w-7xl mx-auto px-6 text-center">
-        {/* === Heading === */}
-        <h2 className="text-4xl sm:text-5xl font-extrabold mb-3">
-          <span className="text-[#1E293B]">Our&nbsp;</span>
+ 
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4">
+          <span className="text-gray-800">Meet Our </span>
           <span className="text-[#A2844E]">Team</span>
         </h2>
 
-        <p className="text-gray-500 mb-12 text-base sm:text-lg">
-          The passionate people who make your travel experiences unforgettable.
+        <p className="text-gray-600 mb-12 text-base sm:text-lg max-w-2xl mx-auto">
+          Passionate travel experts dedicated to making your adventures unforgettable.
         </p>
 
-        {/* === Carousel Wrapper (Wider: 92%) === */}
-        <div className=" w-[85%] mx-auto">
+
+        <div className="relative w-[90%] sm:w-[85%] mx-auto">
           <div
-            ref={carouselRef}
-            className="flex gap-8  mx-8 sm:mx-12 cursor-pointer"
+            ref={trackRef}
+            className="flex items-center gap-8 sm:gap-10 w-max"
           >
-            {[...teamMembers, ...teamMembers].map((member, index) => (
+            {teamMembers.map((member, index) => (
               <div
                 key={index}
-                className="carousel-card flex-shrink-0 w-[300px] sm:w-[320px]"
+                className="flex-shrink-0 w-[260px] sm:w-[300px] md:w-[320px] carousel-card"
               >
                 <TourCard
                   image={member.image}
@@ -126,6 +112,10 @@ const Team = () => {
           </div>
         </div>
       </div>
+
+
+      <div className="absolute top-0 left-0 w-[14rem] sm:w-[18rem] md:w-[22rem] h-[14rem] sm:h-[18rem] md:h-[22rem] bg-[#E7DCC3]/50 blur-3xl rounded-full -z-10 animate-pulse" />
+      <div className="absolute bottom-0 right-0 w-[14rem] sm:w-[18rem] md:w-[22rem] h-[14rem] sm:h-[18rem] md:h-[22rem] bg-[#b89e6b]/30 blur-3xl rounded-full -z-10 animate-pulse delay-200" />
     </section>
   );
 };

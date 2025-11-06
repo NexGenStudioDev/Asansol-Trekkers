@@ -1,6 +1,10 @@
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
 const useMedia = (queries, values, defaultValue) => {
   const get = () => values[queries.findIndex(q => matchMedia(q).matches)] ?? defaultValue;
 
@@ -50,13 +54,14 @@ const Masonry = ({
   items,
   ease = 'power3.out',
   duration = 0.6,
-  stagger = 0.05,
+  stagger = 1.5,
   animateFrom = 'bottom',
   scaleOnHover = true,
   hoverScale = 0.95,
   blurToFocus = true,
   colorShiftOnHover = false
 }) => {
+ 
   const columns = useMedia(
     ['(min-width:1500px)', '(min-width:1000px)', '(min-width:600px)', '(min-width:400px)'],
     [5, 4, 3, 2],
@@ -125,6 +130,7 @@ const Masonry = ({
 
     grid.forEach((item, index) => {
       const selector = `[data-key="${item.id}"]`;
+      console.log('Animating item:',index * stagger);
       const animProps = { x: item.x, y: item.y, width: item.w, height: item.h };
 
       if (!hasMounted.current) {
@@ -134,6 +140,7 @@ const Masonry = ({
           {
             opacity: 0,
             x: start.x,
+
             y: start.y,
             width: item.w,
             height: item.h,
@@ -145,18 +152,16 @@ const Masonry = ({
   ...animProps,
   ...(blurToFocus && { filter: 'blur(0px)' }),
   duration: 1.8,
-  ease: 'power2.inOut',
+
+  ease: 'power3.inOut',
   delay: index * stagger,
   scrollTrigger: {
-    markers: false,
     trigger: containerRef.current,
     endTrigger: containerRef.current,
     fastScrollEnd: true,
-    // pin: true,
-    scrub: 3,
-    start: 'top 55%',
-    end: 'top 60%',
-    toggleActions: 'play none none reverse'
+    start: 'top 65%',
+    end: 'top 50%',
+    // toggleActions: 'play play play reverse',
   }
 }
 
