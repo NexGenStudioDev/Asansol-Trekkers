@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react'
 import { gsap } from 'gsap'
-import Video from '../../public/videoplayback.mp4'
+
 
 const Hero = () => {
   const videoRef = useRef(null)
@@ -31,15 +31,7 @@ const Hero = () => {
 
     >
  
-      {/* <video
-        ref={videoRef}
-        className="absolute top-0 left-0 w-full h-full object-cover"
-        src={Video}
-        autoPlay
-        loop
-        muted
-        playsInline
-      /> */}
+   
 
       <img
       src='https://static2.tripoto.com/media/filter/tst/img/765686/TripDocument/1564738457_1564738455215.jpg'
