@@ -66,6 +66,7 @@ const UpcomingEvent = () => {
 
   return (
     <section
+      id="Event"
       ref={sectionRef}
       className="relative w-full min-h-[80vh] py-16 sm:py-20 md:py-24 px-4 sm:px-8 md:px-12 lg:px-20 bg-gradient-to-b from-[#faf8f5] to-[#f3efe9] overflow-hidden"
     >

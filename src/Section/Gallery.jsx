@@ -111,22 +111,21 @@ const Gallery = () => {
 
   return (
     <section
+      id="Gallery"
       ref={sectionRef}
       className="relative w-full flex flex-col items-center min-h-screen 
       bg-gradient-to-b from-[#f5f2ec] to-[#faf8f5] py-12 sm:py-16 md:py-24 px-4 sm:px-8 md:px-12 lg:px-20 
-      overflow-hidden mb-[6vh]"
+      overflow-hidden "
     >
-
       <div className="absolute top-0 left-0 w-[14rem] sm:w-[18rem] md:w-[22rem] h-[14rem] sm:h-[18rem] md:h-[22rem] bg-[#E7DCC3]/50 blur-3xl rounded-full -z-10 animate-pulse" />
       <div className="absolute bottom-0 right-0 w-[14rem] sm:w-[18rem] md:w-[22rem] h-[14rem] sm:h-[18rem] md:h-[22rem] bg-[#b89e6b]/30 blur-3xl rounded-full -z-10 animate-pulse delay-200" />
 
-  
       <div className="text-center mb-12 sm:mb-14 md:mb-16 px-2 sm:px-4">
         <h2 className="gallery-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-800 leading-tight tracking-tight">
           Explore Our{" "}
           <span className="text-[#937A4B]">
             <TextType
-              text={["Gallery", "Adventures", "Moments"]}
+              text={["Gallery", "Gallery", "Gallery"]}
               typingSpeed={60}
               pauseDuration={1500}
               showCursor={true}
@@ -137,14 +136,13 @@ const Gallery = () => {
 
         <p className="gallery-heading text-gray-600 text-base sm:text-lg md:text-xl mt-4 max-w-2xl mx-auto leading-relaxed">
           Step into the world of{" "}
-          <span className="text-[#937A4B] font-semibold">Asansol Trekkers</span> —
-          where every photograph tells a story of adventure, friendship, and
+          <span className="text-[#937A4B] font-semibold">Asansol Trekkers</span>{" "}
+          — where every photograph tells a story of adventure, friendship, and
           nature’s timeless beauty.
         </p>
       </div>
 
-   
-      <div className="w-full sm:w-[90%] md:w-[85%] lg:w-[80%] xl:w-[75%]">
+      <div className="w-full sm:w-[90%] md:w-[90%]">
         <Masonry
           items={items}
           ease="power3.out"

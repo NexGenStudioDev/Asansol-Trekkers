@@ -7,7 +7,6 @@ import { useRef } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
-
 const destinations = [
   {
     name: "Paris",
@@ -42,11 +41,9 @@ const destinations = [
 ];
 
 const PopularDestinations = () => {
-
   let DestinationRef = useRef(null);
 
   useEffect(() => {
-   
     gsap.to(DestinationRef.current, {
       scrollTrigger: {
         trigger: DestinationRef.current,
@@ -62,7 +59,11 @@ const PopularDestinations = () => {
   }, []);
 
   return (
-    <section ref={DestinationRef} className="relative w-full min-h-screen bg-linear-to-b from-[#f5f2ec] to-[#f9f7f4] py-20 px-6 md:px-12 lg:px-20 flex flex-col items-center overflow-hidden">
+    <section
+      ref={DestinationRef}
+      id="Destinations"
+      className="relative w-full min-h-screen bg-linear-to-b from-[#f5f2ec] to-[#f9f7f4] py-20 px-6 md:px-12 lg:px-20 flex flex-col items-center overflow-hidden"
+    >
       {/* Decorative Background Glow */}
       <div className="absolute top-0 left-0 w-[350px] h-[350px] bg-[#E7DCC3]/50 blur-3xl rounded-full -z-10 animate-pulse" />
       <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-[#b89e6b]/30 blur-3xl rounded-full -z-10 animate-pulse delay-200" />
@@ -73,7 +74,8 @@ const PopularDestinations = () => {
           Popular Destinations
         </h1>
         <p className="text-[1.1rem] text-gray-600 mt-4">
-          Explore our most visited and loved travel locations around the world 🌍
+          Explore our most visited and loved travel locations around the world
+          🌍
         </p>
       </div>
 
