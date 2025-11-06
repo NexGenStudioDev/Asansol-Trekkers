@@ -19,7 +19,10 @@ const Nav = () => {
           </h1>
         </div>
 
-        <div className="hidden md:flex items-center space-x-8 text-gray-700 font-medium">
+
+
+        <div className="hidden min-[1098px]:flex items-center space-x-8 text-gray-700 font-medium">
+
           {["Home", "About", "Destinations", "Services", "Contact"].map(
             (link, i) => (
               <span
@@ -32,7 +35,10 @@ const Nav = () => {
           )}
         </div>
 
-        <div className="hidden md:block">
+
+    
+        <div className="hidden min-[1098px]:block">
+
           <button className="bg-[#937A4B] text-white px-6 py-2 rounded-md font-medium shadow-md hover:bg-[#7a623b] transition duration-300">
             Get In Touch
           </button>

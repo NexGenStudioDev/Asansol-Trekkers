@@ -14,6 +14,7 @@ import Contact from "./Section/Contact";
 
 const App = () => {
   return (
+
     <>
       <Nav />
       <Hero />
@@ -30,6 +31,7 @@ const App = () => {
 
       {/* <div className="h-screen w-screen bg-red-400"></div> */}
     </>
+
   );
 };
 
