@@ -141,27 +141,25 @@ const Masonry = ({
 
           },
           {
-            opacity: 1,
-            ...animProps,
-            ...(blurToFocus && { filter: 'blur(0px)' }),
-            duration: 1.8,
-            ease: 'power3.out',
-            delay: index * stagger,
-           
-            ease: "power2.inOut",
-            scrollTrigger: {
-              markers: true,
-              trigger: containerRef.current,
-              endTrigger: containerRef.current,
-              fastScrollEnd: true,
-              // pin: true,
-              scrub: 3,
+  opacity: 1,
+  ...animProps,
+  ...(blurToFocus && { filter: 'blur(0px)' }),
+  duration: 1.8,
+  ease: 'power2.inOut',
+  delay: index * stagger,
+  scrollTrigger: {
+    markers: false,
+    trigger: containerRef.current,
+    endTrigger: containerRef.current,
+    fastScrollEnd: true,
+    // pin: true,
+    scrub: 3,
+    start: 'top 55%',
+    end: 'top 60%',
+    toggleActions: 'play none none reverse'
+  }
+}
 
-              start: 'top 55%',
-              end: 'top 60%',
-              toggleActions: 'play none none reverse'
-            }
-          }
         );
       } else {
         gsap.to(selector, {
