@@ -34,8 +34,7 @@ const events = [
 
 const UpcomingEvent = () => {
   return (
-    <section className="relative w-full min-h-screen  py-20 px-6 md:px-12 lg:px-20">
-
+    <section className="relative w-full min-h-[80vh]  py-20 px-6 md:px-12 lg:px-20">
       <div className="text-center mb-20">
         <h1 className="text-4xl md:text-5xl font-extrabold text-gray-800">
           Upcoming <span className="text-[#937A4B]">Events</span>
@@ -46,14 +45,12 @@ const UpcomingEvent = () => {
         </p>
       </div>
 
-    
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1.5  ">
         {events.map((event) => (
           <div
             key={event.id}
             className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all w-[85%] duration-500 overflow-hidden group"
           >
-           
             <div className="relative w-full h-56 md:h-64 overflow-hidden">
               <img
                 src={event.img}
@@ -63,7 +60,6 @@ const UpcomingEvent = () => {
               <div className="absolute inset-0 bg-linear-to-t from-black/60 via-black/30 to-transparent opacity-40 group-hover:opacity-60 transition-opacity duration-500"></div>
             </div>
 
-          
             <div className="p-6 md:p-8">
               <div className="flex items-center gap-3 mb-3">
                 {event.icon}
@@ -75,7 +71,6 @@ const UpcomingEvent = () => {
                 {event.description}
               </p>
 
-            
               <a
                 href={event.link}
                 target="_blank"
@@ -89,7 +84,6 @@ const UpcomingEvent = () => {
         ))}
       </div>
 
-   
       <div className="absolute top-0 left-0 w-[300px] h-[300px] bg-[#E7DCC3]/40 blur-3xl rounded-full -z-10 animate-pulse" />
       <div className="absolute bottom-0 right-0 w-[350px] h-[350px] bg-[#b89e6b]/30 blur-3xl rounded-full -z-10 animate-pulse delay-200" />
     </section>

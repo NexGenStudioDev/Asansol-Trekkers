@@ -144,19 +144,21 @@ const Masonry = ({
             opacity: 1,
             ...animProps,
             ...(blurToFocus && { filter: 'blur(0px)' }),
-            duration: 0.8,
+            duration: 1.8,
             ease: 'power3.out',
             delay: index * stagger,
+           
+            ease: "power2.inOut",
             scrollTrigger: {
-              trigger: containerRef.current,
-              
-              pin: true,
-              
-      
               markers: true,
-              
-              start: '-15%',
-              end: '-20%',
+              trigger: containerRef.current,
+              endTrigger: containerRef.current,
+              fastScrollEnd: true,
+              // pin: true,
+              scrub: 3,
+
+              start: 'top 55%',
+              end: 'top 60%',
               toggleActions: 'play none none reverse'
             }
           }
