@@ -1,12 +1,18 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import TourCard from "../Components/TourCard";
+import pinaki from "../assets/pinaki.jpg"; // ✅ correct path
 
 const Team = () => {
   const trackRef = useRef(null);
   const animationRef = useRef(null);
 
   const teamMembers = [
+    {
+      image: pinaki,
+      title: "Pinaki Chakraborty",
+      label: "Founder & Lead Trekker",
+    },
     {
       image:
         "https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=800&q=80",
@@ -42,6 +48,7 @@ const Team = () => {
   useEffect(() => {
     const track = trackRef.current;
 
+    // duplicate for seamless loop
     const clones = track.innerHTML;
     track.innerHTML += clones;
 
@@ -53,7 +60,7 @@ const Team = () => {
       ease: "none",
       repeat: -1,
       modifiers: {
-        x: gsap.utils.unitize((x) => parseFloat(x) % totalWidth), // seamless wrap
+        x: gsap.utils.unitize((x) => parseFloat(x) % totalWidth),
       },
     });
 
@@ -84,8 +91,7 @@ const Team = () => {
         </h2>
 
         <p className="text-gray-600 mb-12 text-base sm:text-lg max-w-2xl mx-auto">
-          Passionate travel experts dedicated to making your adventures
-          unforgettable.
+          Passionate travel experts dedicated to making your adventures unforgettable.
         </p>
 
         <div className="relative w-[90%] sm:w-[85%] mx-auto">
@@ -96,22 +102,30 @@ const Team = () => {
             {teamMembers.map((member, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 w-[260px] sm:w-[300px] md:w-[320px] carousel-card"
+                className="flex-shrink-0 w-[260px] sm:w-[300px] md:w-[320px] text-center"
               >
-                <TourCard
-                  image={member.image}
-                  title={member.title}
-                  label={member.label}
-                  height="h-[400px]"
-                  textAlign="center"
-                  textSize="text-lg"
-                />
+                <div className="bg-white shadow-md rounded-2xl overflow-hidden border-4 border-[#A2844E]/60 hover:scale-105 transition-transform duration-300">
+                  <img
+                    src={member.image}
+                    alt={member.title}
+                    className="w-full h-[360px] object-cover"
+                  />
+                  <div className="p-4">
+                    <h3 className="text-xl font-semibold text-gray-800">
+                      {member.title}
+                    </h3>
+                    <p className="text-[#A2844E] mt-1 font-medium">
+                      {member.label}
+                    </p>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
         </div>
       </div>
 
+      {/* background blur circles */}
       <div className="absolute top-0 left-0 w-[14rem] sm:w-[18rem] md:w-[22rem] h-[14rem] sm:h-[18rem] md:h-[22rem] bg-[#E7DCC3]/50 blur-3xl rounded-full -z-10 animate-pulse" />
       <div className="absolute bottom-0 right-0 w-[14rem] sm:w-[18rem] md:w-[22rem] h-[14rem] sm:h-[18rem] md:h-[22rem] bg-[#b89e6b]/30 blur-3xl rounded-full -z-10 animate-pulse delay-200" />
     </section>
