@@ -1,7 +1,8 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { FaHiking, FaLeaf, FaUmbrellaBeach } from "react-icons/fa";
+// import { FaHiking, FaUmbrellaBeach } from "react-icons/fa";
+import { FaMountain, FaLeaf, FaStar } from "react-icons/fa";
 import { BsArrowRightCircle } from "react-icons/bs";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -9,30 +10,30 @@ gsap.registerPlugin(ScrollTrigger);
 const events = [
   {
     id: 1,
-    title: "Mountain Adventure",
+    title: "Sunrise Peak & Camp",
     description:
-      "Join us for an exhilarating 5-day trek through the majestic Himalayas. Discover breathtaking trails and create lifelong memories.",
-    img: "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?auto=format&fit=crop&w=1080&q=80",
-    link: "https://dev.to/abhishekg/mountain-adventure",
-    icon: <FaHiking className="text-3xl text-[#937A4B]" />,
+      "Experience the magic of dawn from the hills near Asansol! A one-night trek with a scenic sunrise, cozy campfire, and unforgettable mountain views.",
+    img: "https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=1080&q=80",
+    link: "https://asansoltrekker.in/events/sunrise-peak-camp",
+    icon: <FaMountain className="text-3xl text-[#937A4B]" />,
   },
   {
     id: 2,
-    title: "Beach Cleanup Drive",
+    title: "Trek & Clean Drive",
     description:
-      "Be a part of our community initiative to clean the beautiful beaches of Goa. Together, we can protect marine life and our planet.",
-    img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1080&q=80",
-    link: "https://dev.to/abhishekg/beach-cleanup-drive",
-    icon: <FaUmbrellaBeach className="text-3xl text-[#937A4B]" />,
+      "Join our eco-adventure initiative to keep the local trails clean! Enjoy a day of trekking while giving back to nature through a collective cleanup activity.",
+    img: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1080&q=80",
+    link: "https://asansoltrekker.in/events/trek-clean-drive",
+    icon: <FaLeaf className="text-3xl text-[#937A4B]" />,
   },
   {
     id: 3,
-    title: "Forest Exploration",
+    title: "Night Trek & Stargazing",
     description:
-      "Explore the dense forests of the Amazon with our expert guides. Experience nature in its purest form on this adventure of a lifetime.",
-    img: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1080&q=80",
-    link: "https://dev.to/abhishekg/forest-exploration",
-    icon: <FaLeaf className="text-3xl text-[#937A4B]" />,
+      "Trek under a blanket of stars! Join our night adventure with guided trails, bonfire sessions, and stargazing through telescopes at the summit.",
+    img: "https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=1080&q=80",
+    link: "https://asansoltrekker.in/events/night-trek-stargazing",
+    icon: <FaStar className="text-3xl text-[#937A4B]" />,
   },
 ];
 

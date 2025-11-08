@@ -4,39 +4,43 @@ import { useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRef } from "react";
+import BaliPassTrek from "../assets/img10.jpg";
+import dighaCoastal from "../assets/Coastal.png";
+import beroHills from "../assets/beroHill.png";
+import ayodhyaHills from "../assets/ayodhyaHill.png";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const destinations = [
   {
-    name: "Paris",
-    img: "https://image.urlaubspiraten.de/720/image/upload/v1603284015/mediavault_images/avhrvmwfdlndjdwwxhsy.jpg",
-    tours: "5 tours",
+    name: "Chandipur to Digha Coastal Trek",
+    img: dighaCoastal,
+    tours: "1 trek completed",
   },
   {
-    name: "New York",
-    img: "https://media.tacdn.com/media/attractions-splice-spp-674x446/07/bd/6f/17.jpg",
-    tours: "8 tours",
+    name: "Amarnath Yatra ",
+    img: "https://asansoltrekker.in/images/amarnath-trek.jpg", // replace with actual hosted image
+    tours: "2 treks completed",
   },
   {
-    name: "Tokyo",
-    img: "https://t3.ftcdn.net/jpg/00/83/45/28/360_F_83452854_Epa5N806VaHrsnr5oBhUYVSEIqWqJGfO.jpg",
-    tours: "6 tours",
+    name: "Bero Hill, Purulia",
+    img: beroHills,
+    tours: "3 treks completed",
   },
   {
-    name: "Sydney",
-    img: "https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?auto=format&fit=crop&w=800&q=80",
-    tours: "4 tours",
+    name: "Ayodhya Hill, Purulia",
+    img: ayodhyaHills,
+    tours: "4 treks completed",
   },
   {
-    name: "Rome",
-    img: "https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&w=800&q=80",
-    tours: "7 tours",
+    name: "Bali Pass Trek",
+    img: BaliPassTrek,
+    tours: "2 treks completed",
   },
   {
-    name: "Bali",
-    img: "https://t3.ftcdn.net/jpg/01/03/58/72/360_F_103587221_TkNTFDBswYYpCZ2sbsmvZxHFtBvXLHff.jpg",
-    tours: "3 tours",
+    name: "Himalayan Trek",
+    img: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1080&q=80",
+    tours: "1 treks completed",
   },
 ];
 
