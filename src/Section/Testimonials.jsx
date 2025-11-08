@@ -8,27 +8,25 @@ gsap.registerPlugin(ScrollTrigger);
 const Testimonials = () => {
   const testimonials = [
     {
-      name: "Aarav Sharma",
+      name: "Somnath Mukherjee",
+      role: "B.Tech Student",
+      message:
+        "Being a beginner, I was nervous at first, but the Asansol Trekker team made everything easy and safe. The way they handle logistics and motivate you is impressive",
+      image: "https://avatars.githubusercontent.com/u/176110876?v=4",
+    },
+    {
+      name: "Abhishek Gupta",
       role: "Student",
       message:
-        "The courses offered were incredibly well-structured and easy to follow. I've gained confidence and new skills that helped me land my dream internship!",
-      image:
-        "https://www.india.com/wp-content/uploads/2017/10/Bigg-Boss-Tamil-Winner-Arav-Aarav.jpg",
+        "Asansol Trekker gave me my first real taste of adventure! The team’s organization, safety, and energy were amazing. Every trek felt like a family trip filled with laughter and memories",
+      image: "https://avatars.githubusercontent.com/u/122656682?v=4",
     },
     {
-      name: "Priya Mehta",
-      role: "Teacher",
+      name: "Anjali Tomar",
+      role: "Student",
       message:
-        "An absolutely intuitive platform! My students love the interactive learning, and I love how easy it is to manage lessons. It’s truly next-gen education!",
-      image: "https://static.toiimg.com/photo/79283856.cms",
-    },
-    {
-      name: "Rohan Gupta",
-      role: "Parent",
-      message:
-        "Tracking my child’s progress has never been this easy. I can actually see learning become fun and engaging — that’s priceless!",
-      image:
-        "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=800&q=80",
+        "I joined Asansol Trekker to escape my routine life — now it’s become part of my lifestyle. Every journey reminds me that happiness lies in the mountains and good company.",
+      image: "https://avatars.githubusercontent.com/u/160884550?v=4",
     },
   ];
 

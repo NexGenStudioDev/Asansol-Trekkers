@@ -1,6 +1,10 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import fire from "../assets/img19.jpg";
+import mountains from "../assets/img2.jpg";
+import snow from "../assets/img7.jpg";
+import greenTrek from "../assets/img5.jpg";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -41,7 +45,7 @@ const ContactGallery = () => {
       {/* Image 1 */}
       <div className="col-span-1 row-span-2 overflow-hidden rounded-2xl shadow-md">
         <img
-          src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=900&q=80"
+          src={snow}
           alt="Mountain Trek"
           loading="lazy"
           className="w-full h-full object-cover hover:scale-110 transition-transform duration-700 ease-out"
@@ -51,7 +55,7 @@ const ContactGallery = () => {
       {/* Image 2 */}
       <div className="col-span-1 overflow-hidden rounded-2xl shadow-md">
         <img
-          src="https://cdn.pixabay.com/photo/2023/02/16/15/55/trail-7794305_1280.jpg"
+          src={fire}
           alt="Trail Path"
           loading="lazy"
           className="w-full h-full object-cover hover:scale-110 transition-transform duration-700 ease-out"
@@ -61,7 +65,7 @@ const ContactGallery = () => {
       {/* Image 3 */}
       <div className="col-span-1 overflow-hidden rounded-2xl shadow-md">
         <img
-          src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80"
+          src={greenTrek}
           alt="Forest Trek"
           loading="lazy"
           className="w-full h-full object-cover hover:scale-110 transition-transform duration-700 ease-out"
@@ -71,8 +75,7 @@ const ContactGallery = () => {
       {/* Image 4 */}
       <div className="col-span-2 overflow-hidden rounded-2xl shadow-md">
         <img
-          src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1000&q=80"
-          alt="Lake and Mountains"
+          src={mountains}
           loading="lazy"
           className="w-full h-full object-cover hover:scale-110 transition-transform duration-700 ease-out"
         />

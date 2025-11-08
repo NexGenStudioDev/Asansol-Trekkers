@@ -3,33 +3,31 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Masonry from "../Components/Masonry";
 import TextType from "../Components/TextType";
-// import image1 from "../assets/img1.jpg";
+import image1 from "../assets/img1.jpg";
 import image2 from "../assets/img2.jpg";
-// import image3 from "../assets/img3.jpg";
+import image3 from "../assets/img3.jpg";
 import image4 from "../assets/img4.jpg";
 import image5 from "../assets/img5.jpg";
-// import image6 from "../assets/img6.jpg";
+import image6 from "../assets/img6.jpg";
 import image7 from "../assets/img7.jpg";
 import image8 from "../assets/img8.jpg";
 import image9 from "../assets/img9.jpg";
-// import image10 from "../assets/img10.jpg";
-// import image11 from "../assets/img11.jpg";
-// import image12 from "../assets/img12.jpg";
-// import image13 from "../assets/img13.jpg";
+import image11 from "../assets/img11.jpg";
+import image12 from "../assets/img12.jpg";
+import image13 from "../assets/img13.jpg";
 import image14 from "../assets/img14.jpg";
 import image15 from "../assets/img15.jpg";
-// import image16 from "../assets/img16.jpg";
-// import image17 from "../assets/img17.jpg";
+import image16 from "../assets/img16.jpg";
+import image17 from "../assets/img17.jpg";
 import image18 from "../assets/img18.jpg";
 import image19 from "../assets/img19.jpg";
-// import image20 from "../assets/img20.jpg";
+import image20 from "../assets/img20.jpg";
 
 gsap.registerPlugin(ScrollTrigger);
-
 const items = [
   {
     id: "1",
-    img: image14,
+    img: image19,
     url: "https://example.com/one",
     height: 400,
   },
@@ -41,13 +39,13 @@ const items = [
   },
   {
     id: "3",
-    img: image19,
+    img: image4,
     url: "https://example.com/three",
     height: 600,
   },
   {
     id: "4",
-    img: image4,
+    img: image20,
     url: "https://example.com/four",
     height: 350,
   },
@@ -59,15 +57,15 @@ const items = [
   },
   {
     id: "6",
-    img: image18,
+    img: image6,
     url: "https://example.com/six",
-    height: 400,
+    height: 380,
   },
   {
     id: "7",
     img: image7,
     url: "https://example.com/seven",
-    height: 250,
+    height: 260,
   },
   {
     id: "8",
@@ -79,13 +77,61 @@ const items = [
     id: "9",
     img: image9,
     url: "https://example.com/nine",
-    height: 350,
+    height: 340,
   },
   {
     id: "10",
-    img: image15,
+    img: image13,
     url: "https://example.com/ten",
-    height: 450,
+    height: 460,
+  },
+  {
+    id: "11",
+    img: image11,
+    url: "https://example.com/eleven",
+    height: 500,
+  },
+  {
+    id: "12",
+    img: image12,
+    url: "https://example.com/twelve",
+    height: 650,
+  },
+  {
+    id: "13",
+    img: image1,
+    url: "https://example.com/thirteen",
+    height: 320,
+  },
+  {
+    id: "14",
+    img: image14,
+    url: "https://example.com/fourteen",
+    height: 420,
+  },
+  {
+    id: "15",
+    img: image15,
+    url: "https://example.com/fifteen",
+    height: 370,
+  },
+  {
+    id: "16",
+    img: image16,
+    url: "https://example.com/sixteen",
+    height: 550,
+  },
+  {
+    id: "17",
+    img: image17,
+    url: "https://example.com/seventeen",
+    height: 300,
+  },
+  {
+    id: "18",
+    img: image18,
+    url: "https://example.com/eighteen",
+    height: 480,
   },
 ];
 
