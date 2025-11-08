@@ -1,13 +1,13 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import TourCard from "../Components/TourCard";
-import { useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useRef } from "react";
+
 import BaliPassTrek from "../assets/img10.jpg";
 import dighaCoastal from "../assets/Coastal.png";
 import beroHills from "../assets/beroHill.png";
 import ayodhyaHills from "../assets/ayodhyaHill.png";
+import grp from "../assets/grp.jpg"; // ✅ background image import
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -18,8 +18,8 @@ const destinations = [
     tours: "1 trek completed",
   },
   {
-    name: "Amarnath Yatra ",
-    img: "https://asansoltrekker.in/images/amarnath-trek.jpg", // replace with actual hosted image
+    name: "Amarnath Yatra",
+    img: "https://i.pinimg.com/1200x/b7/2d/a6/b72da6962a0c68164c2b835cc948ab0b.jpg",
     tours: "2 treks completed",
   },
   {
@@ -38,14 +38,14 @@ const destinations = [
     tours: "2 treks completed",
   },
   {
-    name: "Himalayan Trek",
-    img: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1080&q=80",
-    tours: "1 treks completed",
+    name: "Kedartal Trek",
+    img: "https://i.pinimg.com/736x/fb/b9/79/fbb979be3cf6dbdaa257f0cc22525784.jpg",
+    tours: "1 trek completed",
   },
 ];
 
 const PopularDestinations = () => {
-  let DestinationRef = useRef(null);
+  const DestinationRef = useRef(null);
 
   useEffect(() => {
     gsap.to(DestinationRef.current, {
@@ -66,24 +66,32 @@ const PopularDestinations = () => {
     <section
       ref={DestinationRef}
       id="Destinations"
-      className="relative w-full min-h-screen bg-linear-to-b from-[#f5f2ec] to-[#f9f7f4] py-20 px-6 md:px-12 lg:px-20 flex flex-col items-center overflow-hidden"
+      className="relative w-full min-h-screen py-20 px-6 md:px-12 lg:px-20 flex flex-col items-center overflow-hidden"
     >
-      {/* Decorative Background Glow */}
-      <div className="absolute top-0 left-0 w-[350px] h-[350px] bg-[#E7DCC3]/50 blur-3xl rounded-full -z-10 animate-pulse" />
-      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-[#b89e6b]/30 blur-3xl rounded-full -z-10 animate-pulse delay-200" />
+      {/* === Background Image === */}
+      <div
+        className="absolute inset-0 bg-cover bg-center -z-20 brightness-[0.75]"
+        style={{ backgroundImage: `url(${grp})` }}
+      ></div>
 
-      {/* Heading Section */}
-      <div className="text-center mb-16 max-w-2xl">
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#937A4B] leading-tight tracking-tight">
+      {/* === Soft Overlay for readability === */}
+      <div className="absolute inset-0 bg-black/40 -z-10"></div>
+
+      {/* === Animated Background Glow === */}
+      <div className="absolute top-0 left-0 w-[350px] h-[350px] bg-[#E7DCC3]/30 blur-3xl rounded-full -z-10 animate-pulse" />
+      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-[#b89e6b]/20 blur-3xl rounded-full -z-10 animate-pulse delay-200" />
+
+      {/* === Heading Section === */}
+      <div className="text-center mb-16 max-w-2xl text-white drop-shadow-[0_2px_5px_rgba(0,0,0,0.6)]">
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#E7DCC3] leading-tight tracking-tight">
           Popular Destinations
         </h1>
-        <p className="text-[1.1rem] text-gray-600 mt-4">
-          Explore our most visited and loved travel locations around the world
-          🌍
+        <p className="text-[1.1rem] mt-4 opacity-90">
+          Explore our most visited and loved travel locations around the world 🌍
         </p>
       </div>
 
-      {/* Cards Grid */}
+      {/* === Cards Grid === */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-7xl">
         {destinations.map((destination, index) => (
           <TourCard
@@ -97,13 +105,6 @@ const PopularDestinations = () => {
           />
         ))}
       </div>
-
-      {/* Call-to-Action */}
-      {/* <div className="mt-16">
-        <button className="bg-[#937A4B] hover:bg-[#7d673f] text-white font-semibold px-10 py-4 rounded-full shadow-lg hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300">
-          View All Tours
-        </button>
-      </div> */}
     </section>
   );
 };

@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import TourCard from "../Components/TourCard";
-import pinaki from "../assets/pinaki.jpg"; // ✅ correct path
+import pinaki from "../assets/pinaki.jpg"; 
 
 const Team = () => {
   const trackRef = useRef(null);
@@ -10,13 +10,13 @@ const Team = () => {
   const teamMembers = [
     {
       image: pinaki,
-      title: "Pinaki Chakraborty",
+      title: "Pinaki Ranjan Bannerjee",
       label: "Founder & Lead Trekker",
     },
     {
       image:
         "https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=800&q=80",
-      title: "Sarah Johnson",
+      title: "Somnath Mukherjee",
       label: "CEO",
     },
     {
