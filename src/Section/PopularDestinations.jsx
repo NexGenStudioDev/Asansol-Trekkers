@@ -19,7 +19,7 @@ const destinations = [
   },
   {
     name: "Amarnath Yatra ",
-    img: "https://asansoltrekker.in/images/amarnath-trek.jpg", // replace with actual hosted image
+    img: "https://i.pinimg.com/1200x/b7/2d/a6/b72da6962a0c68164c2b835cc948ab0b.jpg", // replace with actual hosted image
     tours: "2 treks completed",
   },
   {
@@ -38,8 +38,8 @@ const destinations = [
     tours: "2 treks completed",
   },
   {
-    name: "Himalayan Trek",
-    img: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1080&q=80",
+    name: "Kedartal Trek",
+    img: "https://i.pinimg.com/736x/fb/b9/79/fbb979be3cf6dbdaa257f0cc22525784.jpg",
     tours: "1 treks completed",
   },
 ];

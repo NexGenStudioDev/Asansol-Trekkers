@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import asansoltrekkerspic from "../assets/asansoltrekkerspic.jpg"; // ✅ correct path
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -46,11 +47,11 @@ const About = () => {
           ref={imageRef}
           className="w-full md:w-1/2 flex justify-center items-center relative"
         >
-          <div className="relative w-[85%] sm:w-[75%] md:w-[90%] max-w-md aspect-square">
+          <div className="relative w-[85%] sm:w-[75%] md:w-[90%] max-w-md aspect-square border-4 border-[#937A4B] rounded-xl shadow-[0_0_35px_#937A4B80] overflow-hidden">
             <img
-              src="https://previews.123rf.com/images/yupiramos/yupiramos1811/yupiramos181105195/111553727-avatar-boy-travel-trip-airport-and-vacation-theme-colorful-design-vector-illustration.jpg"
-              alt="About Asansol Trekkers"
-              className="w-full h-full object-cover rounded-lg border-4 border-white shadow-xl scale-x-[-1]"
+              src={asansoltrekkerspic}
+              alt="Asansol Trekkers Club"
+              className="w-full h-full object-cover scale-x-[-1]"
             />
           </div>
         </div>
@@ -61,13 +62,13 @@ const About = () => {
           className="w-full md:w-1/2 text-center md:text-left space-y-5 sm:space-y-6 md:space-y-8"
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-800 leading-tight tracking-tight">
-            About <span className="text-[#937A4B]">Asansol Trekkers</span>
+            About <span className="text-[#937A4B]">Asansol Trekkers Club</span>
           </h2>
 
           <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto md:mx-0">
             For over{" "}
             <span className="font-semibold text-[#937A4B]">25 years</span>,{" "}
-            <strong>Asansol Trekkers</strong> has guided explorers through
+            <strong>Asansol Trekkers Club</strong> has guided explorers through
             breathtaking trails and unforgettable adventures. Each journey is
             designed to reconnect you with nature and inspire your inner
             wanderer.

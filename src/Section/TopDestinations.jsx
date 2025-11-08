@@ -3,19 +3,19 @@ import TourCard from "../Components/TourCard";
 
 const destinations = [
   {
-    name: "France - 5 days in Paris, Nice",
-    img: "https://image.urlaubspiraten.de/720/image/upload/v1603284015/mediavault_images/avhrvmwfdlndjdwwxhsy.jpg",
-    offer: "Special offer, 20% off",
+    name: "Rudragaira Expedition",
+    img: "https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img,w_1280,h_720/https://upnorth.co.in/wp-content/uploads/2021/02/mani03.jpg",
+   
   },
   {
-    name: "Italy - 7 days in Rome, Venice",
-    img: "https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&w=800&q=80",
-    offer: "Special offer, 15% off",
+    name: "Manirang Expedition",
+    img: "https://ttw.wlimg.com/package-images/photo-big/dir_46/1375099/364644.jpg",
+   
   },
   {
-    name: "Japan - 6 days in Tokyo, Kyoto",
-    img: "https://t3.ftcdn.net/jpg/00/83/45/28/360_F_83452854_Epa5N806VaHrsnr5oBhUYVSEIqWqJGfO.jpg",
-    offer: "Special offer, 10% off",
+    name: "Yunam Expedition",
+    img: "https://trekthehimalayas.com/images/HomePageImages/Desktop/4e35f674-6fde-444c-8bed-a86d1ee18586_Yunam-Peak-Day-7.webp",
+  
   },
  
 ];

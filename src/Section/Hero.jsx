@@ -1,63 +1,59 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef, useEffect } from "react";
 import { gsap } from "gsap";
+import back from "../assets/back.jpg"; // rename your image properly
 
 const Hero = () => {
-  const videoRef = useRef(null);
   const contentRef = useRef(null);
-  const [isPlaying, setIsPlaying] = useState(true);
 
   useEffect(() => {
     gsap.fromTo(
       contentRef.current,
-      { opacity: 0.2, scale: 0.8, y: 50 },
-      { opacity: 1, scale: 1, y: 0, duration: 1.4, ease: "power3.out" }
+      { opacity: 0, y: 50 },
+      { opacity: 1, y: 0, duration: 1.4, ease: "power3.out" }
     );
   }, []);
-
-  const toggleVideoPlayback = () => {
-    if (isPlaying) {
-      videoRef.current.pause();
-    } else {
-      videoRef.current.play();
-    }
-    setIsPlaying(!isPlaying);
-  };
 
   return (
     <section
       id="Home"
-      className="relative h-screen w-full overflow-hidden flex items-center justify-center"
+      className="relative w-full flex items-center justify-center bg-black"
+      style={{ minHeight: "100vh", overflow: "hidden" }}
     >
-      {/* Background Image / Video */}
-      <img
-        src="https://static2.tripoto.com/media/filter/tst/img/765686/TripDocument/1564738457_1564738455215.jpg"
-        alt="Hero Background"
-        className="absolute top-0 left-0 w-full h-full object-cover"
-      />
+      {/* Full rectangular image */}
+      <div className="absolute inset-0 flex items-center justify-center">
+        <img
+          src={back}
+          alt="Hero Background"
+          className="max-w-full max-h-full object-contain"
+          style={{
+            width: "100%",
+            height: "auto",
+          }}
+        />
+      </div>
 
       {/* Overlay */}
-      <div className="absolute top-0 left-0 w-full h-full bg-black/50"></div>
+      <div className="absolute inset-0 bg-black/40"></div>
 
-      {/* Content */}
+      {/* Text content */}
       <div
         ref={contentRef}
-        className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4 sm:px-6 md:px-10 lg:px-16"
+        className="relative z-10 text-center px-4 sm:px-6 md:px-10 lg:px-16"
       >
-        {/* Title */}
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-4 leading-tight drop-shadow-lg">
           25+ Years of Excellence <br className="hidden sm:block" />
-          <span className="text-[#D0B77A]">in Trekking</span>
+          <span className="text-[#D0B77A]">
+            in Rock Climbing & Adventurous Sports
+          </span>
         </h1>
 
-        {/* Subtitle */}
         <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white max-w-sm sm:max-w-md md:max-w-2xl lg:max-w-3xl mx-auto leading-relaxed drop-shadow">
           Discover breathtaking destinations with{" "}
-          <span className="font-semibold">Asansol Trekkers</span>. Join us for
-          unforgettable adventures — from lush valleys to snow-capped peaks.
+          <span className="font-semibold">Asansol Trekkers Club</span>. Join us
+          for unforgettable adventures from lush valleys to snow-capped peaks.
         </p>
 
-        {/* Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 mt-8">
+        <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 mt-8 justify-center">
           <button className="bg-[#937A4B] hover:bg-[#a08552] text-white px-8 py-3 rounded-md text-sm sm:text-base md:text-lg font-medium transition duration-300 shadow-lg">
             Explore Now
           </button>
