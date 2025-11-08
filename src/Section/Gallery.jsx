@@ -3,67 +3,87 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Masonry from "../Components/Masonry";
 import TextType from "../Components/TextType";
+// import image1 from "../assets/img1.jpg";
+import image2 from "../assets/img2.jpg";
+// import image3 from "../assets/img3.jpg";
+import image4 from "../assets/img4.jpg";
+import image5 from "../assets/img5.jpg";
+// import image6 from "../assets/img6.jpg";
+import image7 from "../assets/img7.jpg";
+import image8 from "../assets/img8.jpg";
+import image9 from "../assets/img9.jpg";
+// import image10 from "../assets/img10.jpg";
+// import image11 from "../assets/img11.jpg";
+// import image12 from "../assets/img12.jpg";
+// import image13 from "../assets/img13.jpg";
+import image14 from "../assets/img14.jpg";
+import image15 from "../assets/img15.jpg";
+// import image16 from "../assets/img16.jpg";
+// import image17 from "../assets/img17.jpg";
+import image18 from "../assets/img18.jpg";
+import image19 from "../assets/img19.jpg";
+// import image20 from "../assets/img20.jpg";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const items = [
   {
     id: "1",
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTishZsCtf1tyXX5ivWjvFPhonP5rwBjIJcUw&s",
+    img: image14,
     url: "https://example.com/one",
     height: 400,
   },
   {
     id: "2",
-    img: "https://picsum.photos/id/1011/600/750?grayscale",
+    img: image2,
     url: "https://example.com/two",
     height: 250,
   },
   {
     id: "3",
-    img: "https://static2.tripoto.com/media/filter/tst/img/2025875/TripDocument/1601531054_these_traveling_tips_helps_me_having_hassle_free_journey.jpg",
+    img: image19,
     url: "https://example.com/three",
     height: 600,
   },
   {
     id: "4",
-    img: "https://res.cloudinary.com/worldpackers/image/upload/c_fill,f_auto,q_auto,w_1024/v1/guides/article_cover/c7c4elegquhjubd1xmyb?_a=BACADKGT",
+    img: image4,
     url: "https://example.com/four",
     height: 350,
   },
   {
     id: "5",
-    img: "https://picsum.photos/id/1040/600/900?grayscale",
+    img: image5,
     url: "https://example.com/five",
     height: 450,
   },
   {
     id: "6",
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTishZsCtf1tyXX5ivWjvFPhonP5rwBjIJcUw&s",
+    img: image18,
     url: "https://example.com/six",
     height: 400,
   },
   {
     id: "7",
-    img: "https://res.cloudinary.com/worldpackers/image/upload/c_limit,f_auto,q_auto,w_1140/g0dzyjfrlqnq66wrsjcz",
+    img: image7,
     url: "https://example.com/seven",
     height: 250,
   },
   {
     id: "8",
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkDTXPqJxHAf1W-0YvcF9jrjy18AtDjDORdQ&s",
+    img: image8,
     url: "https://example.com/eight",
     height: 600,
   },
   {
     id: "9",
-    img: "https://images.pexels.com/photos/1066801/pexels-photo-1066801.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+    img: image9,
     url: "https://example.com/nine",
     height: 350,
   },
   {
     id: "10",
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSn2p3xRAPsZDtCigNjp5Zi7FP5hHxErTcUuQ&s",
+    img: image15,
     url: "https://example.com/ten",
     height: 450,
   },
