@@ -4,29 +4,29 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import BaliPassTrek from "../assets/img10.jpg";
-import dighaCoastal from "../assets/Coastal.png";
-import beroHills from "../assets/beroHill.png";
+// import dighaCoastal from "../assets/Coastal.png";
+// import beroHills from "../assets/beroHill.png";
 import ayodhyaHills from "../assets/ayodhyaHill.png";
 import grp from "../assets/grp.jpg"; // ✅ background image import
 
 gsap.registerPlugin(ScrollTrigger);
 
 const destinations = [
-  {
-    name: "Chandipur to Digha Coastal Trek",
-    img: dighaCoastal,
-    tours: "1 trek completed",
-  },
+  // {
+  //   name: "Chandipur to Digha Coastal Trek",
+  //   img: dighaCoastal,
+  //   tours: "1 trek completed",
+  // },
   {
     name: "Amarnath Yatra",
     img: "https://i.pinimg.com/1200x/b7/2d/a6/b72da6962a0c68164c2b835cc948ab0b.jpg",
     tours: "2 treks completed",
   },
-  {
-    name: "Bero Hill, Purulia",
-    img: beroHills,
-    tours: "3 treks completed",
-  },
+  // {
+  //   name: "Bero Hill, Purulia",
+  //   img: beroHills,
+  //   tours: "3 treks completed",
+  // },
   {
     name: "Ayodhya Hill, Purulia",
     img: ayodhyaHills,
