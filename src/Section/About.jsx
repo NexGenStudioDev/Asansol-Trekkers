@@ -2,7 +2,6 @@ import React, { useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import asansoltrekkerspic from "../assets/asansoltrekkerspic.jpg";
-import bgImage from "../assets/bgmountain.jpg";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -38,13 +37,10 @@ const About = () => {
     <section
       id="About"
       className="relative w-full py-16 sm:py-20 md:py-24 lg:py-28 overflow-hidden"
+      style={{
+        background: "linear-gradient(180deg, #f3eee3 0%, #eae3d5 100%)",
+      }}
     >
-      {/* === Background Image === */}
-      <div
-        className="absolute inset-0 -z-20 bg-cover bg-center brightness-75"
-        style={{ backgroundImage: `url(${bgImage})` }}
-      ></div>
-
       {/* === Soft glowing blob === */}
       <div className="absolute -z-10 w-[18rem] h-[18rem] md:w-[24rem] md:h-[24rem] bg-[#E7DCC3]/40 blur-3xl rounded-full top-10 left-10 animate-pulse" />
 
@@ -66,15 +62,16 @@ const About = () => {
         {/* ---------- Text Section ---------- */}
         <div
           ref={textRef}
-          className="w-full md:w-1/2 text-center md:text-left space-y-5 sm:space-y-6 md:space-y-8 text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]"
+          className="w-full md:w-1/2 text-center md:text-left space-y-5 sm:space-y-6 md:space-y-8 text-[#000000]"
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight">
-            About <span className="text-[#E7DCC3]">Asansol Trekkers Club</span>
+            About{" "}
+            <span className="text-[#937A4B]">Asansol Trekkers Club</span>
           </h2>
 
           <p className="text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed max-w-2xl mx-auto md:mx-0 opacity-95">
             For over{" "}
-            <span className="font-semibold text-[#E7DCC3]">25 years</span>,{" "}
+            <span className="font-semibold text-[#937A4B]">25 years</span>,{" "}
             <strong>Asansol Trekkers Club</strong> has guided explorers through
             breathtaking trails and unforgettable adventures. Each journey is
             designed to reconnect you with nature and inspire your inner
@@ -84,9 +81,9 @@ const About = () => {
           <p className="text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed max-w-2xl mx-auto md:mx-0 opacity-95">
             Whether you’re taking your first trek or chasing your next summit,
             our passionate community ensures every experience is{" "}
-            <span className="font-medium text-[#E7DCC3]">safe</span>,{" "}
-            <span className="font-medium text-[#E7DCC3]">memorable</span>, and{" "}
-            <span className="font-medium text-[#E7DCC3]">life-changing</span>.
+            <span className="font-medium text-[#937A4B]">safe</span>,{" "}
+            <span className="font-medium text-[#937A4B]">memorable</span>, and{" "}
+            <span className="font-medium text-[#937A4B]">life-changing</span>.
             Join us and start writing your adventure story today.
           </p>
 

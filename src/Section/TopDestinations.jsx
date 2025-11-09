@@ -30,7 +30,8 @@ const TopDestinations = () => {
    
       <div className="text-center mb-16 max-w-2xl">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#937A4B] leading-tight tracking-tight">
-          Top Destinations
+              <span className="text-black">Top </span>
+          <span className="text-[#937A4B]">Destinations</span>
         </h1>
         <p className="text-[1.1rem] text-gray-600 mt-4">
           Discover the most breathtaking and top-rated destinations around the globe 🌍

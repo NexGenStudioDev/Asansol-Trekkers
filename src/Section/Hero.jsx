@@ -1,65 +1,90 @@
 import React, { useRef, useEffect } from "react";
 import { gsap } from "gsap";
-import back from "../assets/back.jpg"; // rename your image properly
+import back from "../assets/back.jpg";
 
 const Hero = () => {
+  const headingRef = useRef(null);
+  const subHeadingRef = useRef(null);
   const contentRef = useRef(null);
 
   useEffect(() => {
+    // Highlight heading with zoom animation
+    gsap.fromTo(
+      headingRef.current,
+      { scale: 0.7, opacity: 0 },
+      { scale: 1, opacity: 1, duration: 1.2, ease: "back.out(1.7)" }
+    );
+
+    // Animate subheading
+    gsap.fromTo(
+      subHeadingRef.current,
+      { opacity: 0, y: 30 },
+      { opacity: 1, y: 0, delay: 1, duration: 1.2, ease: "power3.out" }
+    );
+
+    // Animate paragraph and buttons
     gsap.fromTo(
       contentRef.current,
       { opacity: 0, y: 50 },
-      { opacity: 1, y: 0, duration: 1.4, ease: "power3.out" }
+      { opacity: 1, y: 0, delay: 2, duration: 1.2, ease: "power2.out" }
     );
   }, []);
 
   return (
     <section
       id="Home"
-      className="relative w-full flex items-center justify-center bg-black"
-      style={{ minHeight: "100vh", overflow: "hidden" }}
+      className="relative w-full flex items-center justify-center bg-black overflow-hidden"
+      style={{ minHeight: "100vh" }}
     >
-      {/* Full rectangular image */}
-      <div className="absolute inset-0 flex items-center justify-center">
-        <img
-          src={back}
-          alt="Hero Background"
-          className="max-w-full max-h-full object-contain"
-          style={{
-            width: "100%",
-            height: "auto",
-          }}
-        />
-      </div>
-
-      {/* Overlay */}
+      {/* Background */}
+      <img
+        src={back}
+        alt="Hero Background"
+        className="absolute inset-0 w-full h-full object-cover object-center"
+      />
       <div className="absolute inset-0 bg-black/40"></div>
 
-      {/* Text content */}
-      <div
-        ref={contentRef}
-        className="relative z-10 text-center px-4 sm:px-6 md:px-10 lg:px-16"
-      >
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-4 leading-tight drop-shadow-lg">
-          25+ Years of Excellence <br className="hidden sm:block" />
-          <span className="text-[#D0B77A]">
-            in Rock Climbing & Adventurous Sports
-          </span>
+      {/* Content */}
+      <div className="relative z-10 text-center px-6 sm:px-10 md:px-16">
+        {/* Main Heading */}
+        <h1
+          ref={headingRef}
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white mb-3 leading-tight drop-shadow-lg"
+        >
+          <span className="text-[#FFD700] text-5xl sm:text-6xl md:text-7xl animate-pulse">
+            25 Years
+          </span>{" "}
+          of Excellence
         </h1>
 
-        <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white max-w-sm sm:max-w-md md:max-w-2xl lg:max-w-3xl mx-auto leading-relaxed drop-shadow">
-          Discover breathtaking destinations with{" "}
-          <span className="font-semibold">Asansol Trekkers Club</span>. Join us
-          for unforgettable adventures from lush valleys to snow-capped peaks.
-        </p>
+        {/* Subheading with spacing fix */}
+        <h2
+          ref={subHeadingRef}
+          className="text-[#D0B77A] font-bold text-2xl sm:text-3xl md:text-4xl tracking-wide mt-2"
+        >
+          in <span className="text-white">Rock Climbing</span> &{" "}
+          <span className="text-white">Adventurous Sports</span>
+        </h2>
 
-        <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 mt-8 justify-center">
-          <button className="bg-[#937A4B] hover:bg-[#a08552] text-white px-8 py-3 rounded-md text-sm sm:text-base md:text-lg font-medium transition duration-300 shadow-lg">
-            Explore Now
-          </button>
-          <button className="bg-white text-[#937A4B] hover:bg-gray-100 px-8 py-3 rounded-md text-sm sm:text-base md:text-lg font-medium transition duration-300 shadow-lg">
-            Contact Us
-          </button>
+        {/* Description and Buttons */}
+        <div ref={contentRef} className="mt-8">
+          <p className="text-white text-base sm:text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-8">
+            Discover breathtaking destinations with{" "}
+            <span className="font-semibold text-[#FFD700]">
+              Asansol Trekkers Club
+            </span>
+            . Join us for unforgettable adventures from lush valleys to
+            snow-capped peaks.
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <button className="bg-[#937A4B] hover:bg-[#a08552] text-white px-8 py-3 rounded-md text-base font-medium transition duration-300 shadow-lg">
+              Explore Now
+            </button>
+            <button className="bg-white text-[#937A4B] hover:bg-gray-100 px-8 py-3 rounded-md text-base font-medium transition duration-300 shadow-lg">
+              Contact Us
+            </button>
+          </div>
         </div>
       </div>
     </section>

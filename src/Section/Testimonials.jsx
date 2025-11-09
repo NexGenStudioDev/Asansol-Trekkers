@@ -15,18 +15,18 @@ const Testimonials = () => {
       image: "https://avatars.githubusercontent.com/u/176110876?v=4",
     },
     {
-      name: "Abhishek Gupta",
-      role: "Student",
+      name: "mmm",
+      role: "vvvv",
       message:
         "Asansol Trekker gave me my first real taste of adventure! The team’s organization, safety, and energy were amazing. Every trek felt like a family trip filled with laughter and memories",
-      image: "https://avatars.githubusercontent.com/u/122656682?v=4",
+      image: "",
     },
     {
-      name: "Anjali Tomar",
-      role: "Student",
+      name: "",
+      role: "",
       message:
         "I joined Asansol Trekker to escape my routine life — now it’s become part of my lifestyle. Every journey reminds me that happiness lies in the mountains and good company.",
-      image: "https://avatars.githubusercontent.com/u/160884550?v=4",
+      image: "",
     },
   ];
 
