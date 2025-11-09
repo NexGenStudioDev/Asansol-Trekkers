@@ -49,12 +49,12 @@ const UpcomingEvent = () => {
           {
             opacity: 1,
             y: 0,
-            duration: 1,
-            ease: "power3.out",
-            delay: i * 0.1,
+            duration: 0.5,
+            ease: "power2.out",
+            delay: i * 0.05,
             scrollTrigger: {
               trigger: card,
-              start: "top 85%",
+              start: "top 90%",
               toggleActions: "play none none reverse",
             },
           }

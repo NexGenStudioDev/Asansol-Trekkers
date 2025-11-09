@@ -62,13 +62,13 @@ function Footer() {
         <div className="footer-section text-center sm:text-left">
           <h3 className="text-xl font-semibold mb-4">Destinations</h3>
           <ul className="space-y-2 text-gray-600">
-            {["Himalayan", "Ladakh", "Sikkim", "Maharashtra", "Karnataka"].map(
+            {["Himalayan", "Ladakh", "Ayodhya", "Maharashtra", "Karnataka"].map(
               (place, i) => (
                 <li
                   key={i}
                   className="hover:text-yellow-500 transition-colors duration-300 cursor-pointer text-sm md:text-base"
                 >
-                  {place}
+                  <a href="#Destinations">{place}</a>
                 </li>
               )
             )}
@@ -79,16 +79,14 @@ function Footer() {
         <div className="footer-section text-center sm:text-left">
           <h3 className="text-xl font-semibold mb-4">Useful Links</h3>
           <ul className="space-y-2 text-gray-600">
-            {["Home", "About Us", "Events", "Gallery", "Contact Us"].map(
-              (link, i) => (
-                <li
-                  key={i}
-                  className="hover:text-yellow-500 transition-colors duration-300 cursor-pointer text-sm md:text-base"
-                >
-                  {link}
-                </li>
-              )
-            )}
+            {["Home", "About", "Event", "Gallery", "Contact"].map((link, i) => (
+              <li
+                key={i}
+                className="hover:text-yellow-500 transition-colors duration-300 cursor-pointer text-sm md:text-base"
+              >
+                <a href={`#${link}`}> {link}</a>
+              </li>
+            ))}
           </ul>
         </div>
 

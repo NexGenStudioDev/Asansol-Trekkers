@@ -22,11 +22,11 @@ const About = () => {
     tl.fromTo(
       imageRef.current,
       { y: 60, opacity: 0 },
-      { y: 0, opacity: 1, duration: 1.2, ease: "power3.out" }
+      { y: 0, opacity: 1, duration: 1, ease: "power3.out" }
     ).fromTo(
       textRef.current,
       { y: 40, opacity: 0 },
-      { y: 0, opacity: 1, duration: 1, ease: "power2.out" },
+      { y: 0, opacity: 1, duration: 0.9, ease: "power2.out" },
       "-=0.8"
     );
 
@@ -36,13 +36,10 @@ const About = () => {
   return (
     <section
       id="About"
-      className="relative w-full py-16 sm:py-20 md:py-24 lg:py-28 overflow-hidden"
-      style={{
-        background: "linear-gradient(180deg, #f3eee3 0%, #eae3d5 100%)",
-      }}
+      className="relative w-full bg-gradient-to-b from-[#faf8f5] to-[#f3efe9]  py-16 sm:py-20 md:py-24 lg:py-28 overflow-hidden"
     >
       {/* === Soft glowing blob === */}
-      <div className="absolute -z-10 w-[18rem] h-[18rem] md:w-[24rem] md:h-[24rem] bg-[#E7DCC3]/40 blur-3xl rounded-full top-10 left-10 animate-pulse" />
+      <div className="absolute -z-10 w-[18rem] h-[18rem] md:w-[24rem] md:h-[24rem] blur-3xl rounded-full top-10 left-10 animate-pulse" />
 
       <div className="max-w-7xl mx-auto flex flex-col-reverse md:flex-row items-center justify-between gap-12 lg:gap-20 px-6 sm:px-8 md:px-12 lg:px-20 relative z-10">
         {/* ---------- Image Section ---------- */}
@@ -65,8 +62,7 @@ const About = () => {
           className="w-full md:w-1/2 text-center md:text-left space-y-5 sm:space-y-6 md:space-y-8 text-[#000000]"
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight">
-            About{" "}
-            <span className="text-[#937A4B]">Asansol Trekkers Club</span>
+            About <span className="text-[#937A4B]">Asansol Trekkers Club</span>
           </h2>
 
           <p className="text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed max-w-2xl mx-auto md:mx-0 opacity-95">

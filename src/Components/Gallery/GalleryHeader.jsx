@@ -8,7 +8,7 @@ const GalleryHeader = () => {
         Explore Our{" "}
         <span className="text-[#937A4B]">
           <TextType
-            text={["Gallery", "Gallery", "Gallery"]}
+            text={["Gallery", "Moments"]}
             typingSpeed={60}
             pauseDuration={1500}
             showCursor={true}

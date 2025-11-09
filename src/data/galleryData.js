@@ -1,7 +1,6 @@
 import image1 from "../assets/img1.jpg";
 import image2 from "../assets/img2.jpg";
 import image3 from "../assets/img3.jpg";
-import image4 from "../assets/img4.jpg";
 import image5 from "../assets/img5.jpg";
 import image6 from "../assets/img6.jpg";
 import image7 from "../assets/img7.jpg";
@@ -52,12 +51,6 @@ export const galleryItems = [
     img: image3,
     url: "https://example.com/three",
     height: 600,
-  },
-  {
-    id: "4",
-    img: image4,
-    url: "https://example.com/four",
-    height: 350,
   },
   {
     id: "5",

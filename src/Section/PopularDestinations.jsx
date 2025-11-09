@@ -4,28 +4,28 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import BaliPassTrek from "../assets/img10.jpg";
-// import dighaCoastal from "../assets/Coastal.png";
-// import beroHills from "../assets/beroHill.png";
+import dighaCoastal from "../assets/Coastal.png";
+import beroHills from "../assets/beroHill.png";
 import ayodhyaHills from "../assets/ayodhyaHill.png";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const destinations = [
-  // {
-  //   name: "Chandipur to Digha Coastal Trek",
-  //   img: dighaCoastal,
-  //   tours: "1 trek completed",
-  // },
+  {
+    name: "Chandipur to Digha Coastal Trek",
+    img: dighaCoastal,
+    tours: "1 trek completed",
+  },
   {
     name: "Amarnath Yatra",
     img: "https://i.pinimg.com/1200x/b7/2d/a6/b72da6962a0c68164c2b835cc948ab0b.jpg",
     tours: "2 treks completed",
   },
-  // {
-  //   name: "Bero Hill, Purulia",
-  //   img: beroHills,
-  //   tours: "3 treks completed",
-  // },
+  {
+    name: "Bero Hill, Purulia",
+    img: beroHills,
+    tours: "3 treks completed",
+  },
   {
     name: "Ayodhya Hill, Purulia",
     img: ayodhyaHills,
@@ -65,7 +65,8 @@ const PopularDestinations = () => {
     <section
       ref={DestinationRef}
       id="Destinations"
-      className="relative w-full min-h-screen py-20 px-6 md:px-12 lg:px-20 flex flex-col items-center overflow-hidden bg-white"
+      className="relative w-full min-h-screen 
+       bg-gradient-to-b from-[#f5f2ec] to-[#faf8f5]  py-20 px-6 md:px-12 lg:px-20 flex flex-col items-center overflow-hidden "
     >
       {/* === Heading Section === */}
       <div className="text-center mb-16 max-w-2xl">
@@ -74,7 +75,8 @@ const PopularDestinations = () => {
           <span className="text-[#937A4B]">Destinations</span>
         </h1>
         <p className="text-[1.1rem] mt-4 text-gray-700 opacity-90">
-          Explore our most visited and loved travel locations around the world 🌍
+          Explore our most visited and loved travel locations around the world
+          🌍
         </p>
       </div>
 
