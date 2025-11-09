@@ -3,7 +3,7 @@ import PopularDestinations from "./Section/PopularDestinations";
 import Hero from "./Section/Hero";
 import Nav from "./Components/Nav";
 import About from "./Section/About";
-import Gallery from "./Section/Gallery";
+import Gallery from "./Components/Gallery/Gallery.jsx";
 import TourAndTraver from "./Section/TourAndTraver";
 import TopDestinations from "./Section/TopDestinations";
 import UpcomingEvent from "./Section/UpcomingEvent";
