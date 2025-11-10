@@ -19,8 +19,10 @@ const GalleryHeader = () => {
 
       <p className="gallery-heading text-gray-600 text-base sm:text-lg md:text-xl mt-4 max-w-2xl mx-auto leading-relaxed">
         Step into the world of{" "}
-        <span className="text-[#937A4B] font-semibold">Asansol Trekkers</span> —
-        where every photograph tells a story of adventure, friendship, and
+        <span className="text-[#937A4B] font-semibold">
+          Asansol Trekkers Club
+        </span>{" "}
+        — where every photograph tells a story of adventure, friendship, and
         nature's timeless beauty.
       </p>
     </div>

@@ -28,7 +28,7 @@ function Footer() {
         </p>
         <a
           href="tel:8585773477"
-          className="text-2xl md:text-3xl font-bold text-yellow-400 hover:text-yellow-300 transition-transform duration-300 hover:scale-105"
+          className="text-2xl md:text-3xl font-bold text-[#c29d58] hover:text-yellow-300 transition-transform duration-300 hover:scale-105"
         >
           Call Us (+91) 80809898XX
         </a>
@@ -50,7 +50,7 @@ function Footer() {
               <a
                 href={"#"}
                 key={i}
-                className="cursor-pointer p-2 rounded-full bg-gray-100 hover:bg-yellow-400 hover:text-white transition-transform transform hover:scale-110"
+                className="cursor-pointer p-2 rounded-full bg-gray-100 hover:bg-[#A2844E] hover:text-white transition-transform transform hover:scale-110"
               >
                 <Icon size={18} />
               </a>
@@ -66,7 +66,7 @@ function Footer() {
               (place, i) => (
                 <li
                   key={i}
-                  className="hover:text-yellow-500 transition-colors duration-300 cursor-pointer text-sm md:text-base"
+                  className="hover:text-[#A2844E] transition-colors duration-300 cursor-pointer text-sm md:text-base"
                 >
                   <a href="#Destinations">{place}</a>
                 </li>
@@ -82,7 +82,7 @@ function Footer() {
             {["Home", "About", "Event", "Gallery", "Contact"].map((link, i) => (
               <li
                 key={i}
-                className="hover:text-yellow-500 transition-colors duration-300 cursor-pointer text-sm md:text-base"
+                className="hover:text-[#A2844E] transition-colors duration-300 cursor-pointer text-sm md:text-base"
               >
                 <a href={`#${link}`}> {link}</a>
               </li>
@@ -95,14 +95,13 @@ function Footer() {
           <h3 className="text-xl font-semibold mb-4">Contact</h3>
           <ul className="space-y-3 text-gray-600">
             <li className="flex justify-center sm:justify-start items-center gap-2 text-sm md:text-base">
-              <FaPhoneAlt className="text-yellow-500" /> (+91) 80809898XX
+              <FaPhoneAlt className="text-[#A2844E]" /> (+91) 80809898XX
             </li>
             <li className="flex justify-center sm:justify-start items-center gap-2 text-sm md:text-base break-words">
-              <FaEnvelope className="text-yellow-500" />{" "}
-              info@asansoltrekkers.com
+              <FaEnvelope className="text-[#A2844E]" /> info@asansoltrekkers.com
             </li>
             <li className="flex justify-center sm:justify-start items-start gap-2 text-sm md:text-base leading-snug">
-              <FaMapMarkerAlt className="text-yellow-500 mt-1" />
+              <FaMapMarkerAlt className="text-[#A2844E] mt-1" />
               Asansol, West Bengal,
               <br />
               India, 713301
@@ -115,7 +114,7 @@ function Footer() {
       <div className="border-t border-gray-200 py-6 text-center text-gray-500 text-xs md:text-sm">
         © Copyright <span className="font-medium"></span> 2024. All Rights
         Reserved. |
-        <span className="text-yellow-500 font-medium"> Asansal Trekkers</span>
+        <span className="text-[#A2844E] font-medium"> Asansal Trekkers</span>
       </div>
     </footer>
   );

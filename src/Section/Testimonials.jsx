@@ -11,7 +11,7 @@ const Testimonials = () => {
       name: "Somnath Mukherjee",
       role: "B.Tech Student",
       message:
-        "Being a beginner, I was nervous at first, but the Asansol Trekker team made everything easy and safe. The way they handle logistics and motivate you is impressive",
+        "Being a beginner, I was nervous at first, but the Asansol Trekker Club team made everything easy and safe. The way they handle logistics and motivate you is impressive",
       image: "https://avatars.githubusercontent.com/u/176110876?v=4",
     },
     {
@@ -87,7 +87,9 @@ const Testimonials = () => {
         </h2>
         <p className="text-gray-600 text-base sm:text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
           Real stories from trekkers who turned their adventures with{" "}
-          <span className="text-[#A2844E] font-semibold">Asansol Trekkers</span>{" "}
+          <span className="text-[#A2844E] font-semibold">
+            Asansol Trekkers Club
+          </span>{" "}
           into lifelong memories.
         </p>
       </div>

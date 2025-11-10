@@ -38,15 +38,15 @@ const Nav = () => {
 
   return (
     <nav className="fixed top-0 left-0 w-full backdrop-blur-md bg-white/80 border-b border-[#e5decf] shadow-sm z-[999] transition-all duration-300">
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-5 sm:px-10 md:px-[3vw] py-3 md:py-4">
+      <div className="max-w-7xl  mx-auto flex items-center justify-between px-3 sm:px-10 md:px-[3vw] py-3 md:py-4">
         {/* === Logo Section === */}
-        <div className="flex items-center space-x-3 cursor-pointer select-none">
+        <div className="flex items-center space-x-3 cursor-pointer select-none ">
           <img
             src={logo}
             alt="Asansol Trekkers Logo"
             className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 object-contain"
           />
-          <h1 className="text-lg sm:text-xl md:text-2xl font-extrabold text-[#937A4B] tracking-wide mx-5">
+          <h1 className="text-lg sm:text-xl md:text-2xl font-extrabold text-[#937A4B] tracking-wide ">
             Asansol Trekkers
           </h1>
         </div>
